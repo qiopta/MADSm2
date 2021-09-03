@@ -145,3 +145,4 @@ models/
 *.pth
 *.txt
 *.bin
+*.zip
