@@ -19,14 +19,14 @@ def run():
 
     df_train, df_valid = model_selection.train_test_split(
         dfx, test_size=0.1, random_state=42, stratify=dfx.label.values
-    ) #changed from sentiment.values to label.values
+    ) 
 
     df_train = df_train.reset_index(drop=True)
     df_valid = df_valid.reset_index(drop=True)
 
     train_dataset = dataset.BERTDataset(
         review=df_train.original_text.values, target=df_train.label.values
-    ) #changed from sentiment.values to label.values and review.values to original_text.values
+    ) 
 
     train_data_loader = torch.utils.data.DataLoader(
         train_dataset, batch_size=config.TRAIN_BATCH_SIZE, num_workers=4
